@@ -22,8 +22,14 @@ Route::middleware(['auth', 'verified'])
 ->name('admin.')
 ->prefix('admin')
 ->group( function () {
-    route::get("/index", [DashboardController::class, 'index'])
+
+    route::get("/", [DashboardController::class, 'index'])
         ->name('index');
+
+    route::get("/profile", [DashboardController::class, 'profile'])
+        ->name('profile');
+
+
 });
 
 require __DIR__.'/auth.php';
