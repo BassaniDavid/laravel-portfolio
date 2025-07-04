@@ -12,9 +12,9 @@
     </h5>
 
     <section>
-        <p>
-            {{$project->content}}
-        </p>
+        <div class="my-3">
+            <a href="{{$project->content}}">github</a>
+        </div>
     </section>
 
     <div class="d-flex gap-4">
