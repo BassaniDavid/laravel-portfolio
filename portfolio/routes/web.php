@@ -36,6 +36,6 @@ Route::middleware(['auth', 'verified'])
 
 // con questa abbiamo accesso alle rotte in projectController
 Route::resource("projects", ProjectController::class)
-->middleware(['auth', 'verified']);
+    ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
