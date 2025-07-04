@@ -3,19 +3,17 @@
 @section('title', $project->title)
 
 @section('content')
-<div>
+<div class="card p-3">
     <h2 class="mb-4">
-        {{$project->client}}
+        cliente: {{$project->client}}
     </h2>
     <h5 class="mb-3">
-        {{$project->period}}
+        periodo: {{$project->period}}
     </h5>
 
-    <section>
-        <div class="my-3">
-            <a href="{{$project->content}}">github</a>
-        </div>
-    </section>
+    <div class="my-3">
+        <a href="{{$project->content}}" class="btn btn-outline-success">pagina github</a>
+    </div>
 
     <div class="d-flex gap-4">
         <a class="btn btn-warning" href="{{ route('projects.edit', $project) }}">modifica</a>
