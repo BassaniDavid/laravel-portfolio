@@ -3,31 +3,32 @@
 @section('title', $project->title)
 
 @section('content')
-<div class="card p-3">
+<div class="card p-3 w-50 m-auto text-center">
     <h2 class="mb-4">
         cliente: {{$project->client}}
     </h2>
     <h5 class="mb-3">
         periodo: {{$project->period}}
     </h5>
+    <div class="d-flex justify-content-around py-3">
+        <div>
+            <a href="{{$project->content}}" class="btn btn-outline-success">pagina github</a>
+        </div>
 
-    <div class="my-3">
-        <a href="{{$project->content}}" class="btn btn-outline-success">pagina github</a>
-    </div>
-
-    <div class="d-flex gap-4">
-        <a class="btn btn-warning" href="{{ route('projects.edit', $project) }}">modifica</a>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            elimina
-        </button>
-        <a class="btn btn-primary" href="{{ route('projects.index') }}">Torna alla home</a>
+        <div>
+            <a class="btn btn-warning" href="{{ route('projects.edit', $project) }}">modifica</a>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                elimina
+            </button>
+            <a class="btn btn-primary" href="{{ route('projects.index') }}">Torna alla home</a>
 
 
-        {{-- <form action="{{ route('projects.destroy', $project) }}" method="POST">
-            @csrf
-            @method('DELETE')
-            <input type="submit" class="btn btn-danger" value="elimina">
-        </form> --}}
+            {{-- <form action="{{ route('projects.destroy', $project) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" class="btn btn-danger" value="elimina">
+            </form> --}}
+        </div>
     </div>
 </div>
 

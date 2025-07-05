@@ -29,3 +29,13 @@
 -   Nel controller, inserire la logica per il salvataggio di un nuovo progetto, per la sua modifica e per l'eliminazione
 -   Nella tabella della pagina index, inserire i pulsanti su ciascuna riga, per permettere l'eliminazione e la modifica del singolo progetto e inserire un tasto in cima che ci porti alla pagina di creazione del progetto.
 -   aggiungere un controllo quando l'utente clicca sul pulsante per l'eliminazione
+
+## giorno 4
+
+### aggiungere una nuova entità `Type`. Questa entità rappresenta la tipologia di un progetto ed è in relazione `one to many` con i progetti.
+
+-   Creare il modello `Type`, con relativa migrazione ed un seeder per inserire i types nel Database
+-   Creare anche la migration per modificare la tabella projects, che dovrà ora contenere la chiave esterna `type_id`
+-   Nei modelli `Type` e `Project`, aggiungere i metodi per definire la relazione `one-to-many`
+-   Nella pagina di dettaglio del progetto, mostrare il Type a cui il progetto appartiene
+-   Nei form di creazione e modifica dei progetti, permettere di associare un type al progetto stesso. Gestire inoltre il salvataggio di questa associazione progetto-tipologia nel controller `ProjectController`

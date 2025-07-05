@@ -17,7 +17,7 @@
         <label for="period" class="my-2">Periodo</label>
         <input type="text" name="period" id="period" value="{{ $project->period }}">
 
-        <label for="content" class="my-2">Contenuto</label>
+        <label for="content" class="my-2">link github</label>
         <textarea name="content" id="content" rows="10" >{{ $project->content }}</textarea>
 
         <input type="submit" value="salva" class="btn btn-success mt-3 w-50 m-auto">

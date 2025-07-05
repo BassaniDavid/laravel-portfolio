@@ -17,7 +17,7 @@
             <tbody>
                 @foreach ($projects as $project)
                 <tr>
-                    <td>{{ $project->title }}</td>
+                    <td><strong>{{ $project->title }}</strong></td>
                     <td>{{ $project->client }}</td>
                     <td>{{ $project->period }}</td>
                     <td>
