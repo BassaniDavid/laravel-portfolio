@@ -10,6 +10,7 @@
                 <th>Titolo</th>
                 <th>cliente</th>
                 <th>periodo</th>
+                <th>tipologia</th>
                 <th>dettagli</th>
                 <th></th>
                 <th></th>
@@ -20,6 +21,7 @@
                     <td><strong>{{ $project->title }}</strong></td>
                     <td>{{ $project->client }}</td>
                     <td>{{ $project->period }}</td>
+                    <td>{{ $project->category->name }}</td>
                     <td>
                         <a href="{{ route('projects.show', $project->id) }}">visualizza dettagli progetto</a>
                     </td>

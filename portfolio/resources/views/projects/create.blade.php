@@ -16,6 +16,13 @@
         <label for="period" class="my-2">Periodo</label>
         <input type="text" name="period" id="period">
 
+        <label for="category_id" class="my-2">Tipologia</label>
+        <select name="category_id" id="category_id">
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{$category->name }}</option>
+            @endforeach
+        </select>
+
         <label for="content" class="my-2">Contenuto</label>
         <textarea name="content" id="content" rows="10"></textarea>
 

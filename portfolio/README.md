@@ -32,10 +32,10 @@
 
 ## giorno 4
 
-### aggiungere una nuova entità `Type`. Questa entità rappresenta la tipologia di un progetto ed è in relazione `one to many` con i progetti.
+### aggiungere una nuova entità `category`. Questa entità rappresenta la tipologia di un progetto ed è in relazione `one to many` con i progetti.
 
--   Creare il modello `Type`, con relativa migrazione ed un seeder per inserire i types nel Database
--   Creare anche la migration per modificare la tabella projects, che dovrà ora contenere la chiave esterna `type_id`
--   Nei modelli `Type` e `Project`, aggiungere i metodi per definire la relazione `one-to-many`
--   Nella pagina di dettaglio del progetto, mostrare il Type a cui il progetto appartiene
+-   Creare il modello `category`, con relativa migrazione ed un seeder per inserire i types nel Database
+-   Creare anche la migration per modificare la tabella projects, che dovrà ora contenere la chiave esterna `category_id`
+-   Nei modelli `category` e `Project`, aggiungere i metodi per definire la relazione `one-to-many`
+-   Nella pagina di dettaglio del progetto, mostrare il category a cui il progetto appartiene
 -   Nei form di creazione e modifica dei progetti, permettere di associare un type al progetto stesso. Gestire inoltre il salvataggio di questa associazione progetto-tipologia nel controller `ProjectController`

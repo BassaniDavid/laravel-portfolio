@@ -17,6 +17,13 @@
         <label for="period" class="my-2">Periodo</label>
         <input type="text" name="period" id="period" value="{{ $project->period }}">
 
+        <label for="category_id" class="my-2">Tipologia</label>
+        <select name="category_id" id="category_id">
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}" {{$project->category_id == $category->id ? 'selected' : '' }} >{{ $category->name }}</option>
+            @endforeach
+        </select>
+
         <label for="content" class="my-2">link github</label>
         <textarea name="content" id="content" rows="10" >{{ $project->content }}</textarea>
 

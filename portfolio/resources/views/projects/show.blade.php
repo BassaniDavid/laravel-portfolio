@@ -10,6 +10,9 @@
     <h5 class="mb-3">
         periodo: {{$project->period}}
     </h5>
+    <h5 class="mb-3">
+        Tipologia: {{$project->category->name}}
+    </h5>
     <div class="d-flex justify-content-around py-3">
         <div>
             <a href="{{$project->content}}" class="btn btn-outline-success">pagina github</a>

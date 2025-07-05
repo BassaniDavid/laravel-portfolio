@@ -35,7 +35,7 @@ Route::middleware(['auth', 'verified'])
 });
 
 // con questa abbiamo accesso alle rotte in projectController
-Route::resource("projects", ProjectController::class)
-    ->middleware(['auth', 'verified']);
+Route::resource("projects", ProjectController::class);
+    // ->middleware(['auth', 'verified']); disabilitato per non dover tutte le volte registrarmi
 
 require __DIR__.'/auth.php';
