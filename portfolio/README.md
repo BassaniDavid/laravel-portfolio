@@ -39,3 +39,14 @@
 -   Nei modelli `category` e `Project`, aggiungere i metodi per definire la relazione `one-to-many`
 -   Nella pagina di dettaglio del progetto, mostrare il category a cui il progetto appartiene
 -   Nei form di creazione e modifica dei progetti, permettere di associare un type al progetto stesso. Gestire inoltre il salvataggio di questa associazione progetto-tipologia nel controller `ProjectController`
+
+## giorno 5
+
+### Inserire l'entità `Technology`, che rappresenta i linguaggi utilizzati nei progetti e che avrà una relazione `molti a molti` con i progetti stessi.
+
+-   Creare il modello `Technology`, la migration per la sua tabella ed un seeder.
+-   Creare anche la migration per modificare la tabella projects, che dovrà ora contenere la chiave esterna `tecnology_id`
+-   Sarà inoltre necessario creare la tabella pivot `project_technology`, per gestire la relazione molti a molti
+-   Nei modelli `Technology` e `Project`, aggiungere i metodi corretti per rappresentare la relazione molti a molti
+-   Nei form di creazione e modifica dei progetti, permettere di associare una o più tecnologie al progetto stesso. Gestire inoltre il salvataggio di queste associazioni progetto-tecnologie nel controller `ProjectController`
+-   All'interno della pagina di dettaglio di un modello, visualizzare la lista delle tecnologie utilizzate nel singolo progetto.
