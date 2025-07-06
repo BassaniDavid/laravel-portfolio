@@ -10,4 +10,9 @@ class Project extends Model
     public function category() {
         return $this->belongsTo(Category::class);
     }
+
+    // colleghiamo le tecnologie
+    public function tags() {
+        return $this->belongsToMany(Tag::class);
+    }
 }
