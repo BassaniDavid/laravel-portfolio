@@ -30,15 +30,15 @@ class ProjectController extends Controller
         // return "index API";
 
         // prendo i progetti dal db
-        $projects = Project::with('Category', 'tags')->get();
+        $project->load('category', 'tags');
 
-        // dd($projects);
+        // dd($project);
 
 
         return response()->json(
             [
                 "sussess" => true,
-                "data" => $projects
+                "data" => $project
             ]
             );
     }
