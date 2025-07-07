@@ -50,3 +50,12 @@
 -   Nei modelli `Technology` e `Project`, aggiungere i metodi corretti per rappresentare la relazione molti a molti
 -   Nei form di creazione e modifica dei progetti, permettere di associare una o più tecnologie al progetto stesso. Gestire inoltre il salvataggio di queste associazioni progetto-tecnologie nel controller `ProjectController`
 -   All'interno della pagina di dettaglio di un modello, visualizzare la lista delle tecnologie utilizzate nel singolo progetto.
+
+## giorno 6
+
+### predisporre le API che permettano di inviare all'esterno i dati relativi progetti.
+
+-   Creare il file routes/api.php col comando `php artisan install api`
+-   Creare poi un controller dedicato alle API dei progetti, col comando `php artisan make:controller Api/ProjectController` e inserire all'interno i metodi per restituire l'elenco dei progetti ed un singolo progetto, in formato JSON
+-   Testare su Postman le due rotte per verificare che restituiscano correttamente i JSON
+-   Predisponare le configurazioni CORS di Laravel nel file `cors.php` per autorizzare l'applicazione esterna ad effettuare delle chiamate al backend.
