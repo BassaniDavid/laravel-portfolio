@@ -23,6 +23,14 @@
             @endforeach
         </select>
 
+        {{-- tags --}}
+        <div class="mt-3">
+                @foreach ($tags as $tag)
+                    <input type="checkbox" class="ms-5" id="tag-{{ $tag->id }}" name="tags[]" value="{{ $tag->id }}"></input>
+                    <label for="tag-{{ $tag->id }}">{{$tag->name }}</label>
+                @endforeach
+        </div>
+
         <label for="content" class="my-2">Contenuto</label>
         <textarea name="content" id="content" rows="10"></textarea>
 

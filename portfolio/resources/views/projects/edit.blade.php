@@ -23,6 +23,13 @@
                 <option value="{{ $category->id }}" {{$project->category_id == $category->id ? 'selected' : '' }} >{{ $category->name }}</option>
             @endforeach
         </select>
+                {{-- tags --}}
+        <div class="mt-3">
+                @foreach ($tags as $tag)
+                    <input type="checkbox" class="ms-5" id="tag-{{ $tag->id }}" name="tags[]" value="{{ $tag->id }}" {{ $project->tags->contains($tag->id) ? 'checked' : '' }}></input>
+                    <label for="tag-{{ $tag->id }}">{{$tag->name }}</label>
+                @endforeach
+        </div>
 
         <label for="content" class="my-2">link github</label>
         <textarea name="content" id="content" rows="10" >{{ $project->content }}</textarea>

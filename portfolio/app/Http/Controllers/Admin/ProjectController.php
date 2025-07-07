@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Project;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -27,7 +28,10 @@ class ProjectController extends Controller
         // prendo le categorie
         $categories = Category::all();
 
-        return view('projects.create', compact('categories'));
+        // prendo i tag
+        $tags = Tag::all();
+
+        return view('projects.create', compact('categories', 'tags'));
     }
 
     /**
@@ -46,6 +50,14 @@ class ProjectController extends Controller
         $newProject->category_id = $data['category_id'];
 
         $newProject->save();
+
+        // dopo aver salvato il post
+
+        // controllo se ricevo tags
+        if($request->has('tags')) {
+            $newProject->tags()->attach($data['tags']);
+        }
+
 
         return redirect()->route('projects.show', $newProject->id);
 
@@ -71,7 +83,9 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $categories = Category::all();
-        return view('projects.edit', compact('project', 'categories'));
+        // prendo i tag
+        $tags = Tag::all();
+        return view('projects.edit', compact('project', 'categories', 'tags'));
     }
 
     /**
@@ -89,6 +103,15 @@ class ProjectController extends Controller
 
         $project->update();
 
+        // verifichiamo se stiamo ricevendo i tags
+        if($request->has('tags')) {
+            //SINCRONIZIAMO TAG CON TABELLA PIVOT
+            $project->tags()->sync($data['tags']);
+        }else{
+            // se non riceviamo tags li eliminiamo tutti
+            $project->tags()->detach();
+        }
+
         return redirect()->route('projects.show', $project->id);
     }
 
@@ -97,6 +120,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        $project->tags()->detach();
         $project->delete();
         return redirect()->route('projects.index');
     }

@@ -13,6 +13,16 @@
     <h5 class="mb-3">
         Tipologia: {{$project->category->name}}
     </h5>
+    <h6 class="mb-3">
+        Tegnologie:
+        {{-- forelse si puù usare per evitare di fare if --}}
+        @forelse ($project->tags as $tag)
+
+        <span class="badge" style="background-color: {{$tag->color}}">{{$tag->name}}</span>
+        @empty
+            nessuna tecnologia selezionata
+        @endforelse
+    </h6>
     <div class="d-flex justify-content-around py-3">
         <div>
             <a href="{{$project->content}}" class="btn btn-outline-success">pagina github</a>
