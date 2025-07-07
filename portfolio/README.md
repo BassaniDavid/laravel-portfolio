@@ -58,4 +58,3 @@
 -   Creare il file routes/api.php col comando `php artisan install api`
 -   Creare poi un controller dedicato alle API dei progetti, col comando `php artisan make:controller Api/ProjectController` e inserire all'interno i metodi per restituire l'elenco dei progetti ed un singolo progetto, in formato JSON
 -   Testare su Postman le due rotte per verificare che restituiscano correttamente i JSON
--   Predisponare le configurazioni CORS di Laravel nel file `cors.php` per autorizzare l'applicazione esterna ad effettuare delle chiamate al backend.
